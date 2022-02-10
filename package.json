@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "compile": "node-sass code/style.scss code/style/index.css",
-    "watch": "node-sass code/style.scss code/style/index.css -w -ouput"
+    "compile": "node-sass code/scss/style.scss code/style/index.css",
+    "watch": "node-sass code/scss/style.scss code/style/index.css -w --ouput"
   },
   "repository": {
     "type": "git",
