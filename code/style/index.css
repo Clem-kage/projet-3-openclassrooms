@@ -1,0 +1,183 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;500&family=Roboto&display=swap");
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Roboto;
+  background-color: #f1f1f1; }
+
+em {
+  font-family: Roboto; }
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; }
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 5vh;
+  border-bottom: solid 1px;
+  background-color: white; }
+
+.Ac-localisation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 4vh;
+  border-bottom: solid 1px;
+  background-color: #c8cccc; }
+
+h1, p {
+  text-align: center; }
+
+p {
+  font-size: 20px;
+  color: grey; }
+
+.Ac-presentation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 30vh;
+  border-bottom: solid 1px;
+  flex-direction: column; }
+
+h1, h2 {
+  font-size: 30px;
+  font-weight: 800; }
+
+.Ac-fonctionnement {
+  width: 100vw;
+  height: auto;
+  background-color: white;
+  margin-bottom: 10vh;
+  padding-left: 7%; }
+
+button {
+  height: 60px;
+  align-content: center;
+  padding: 0px 19px;
+  border-radius: 30px;
+  border: none;
+  background: #ff79da;
+  background: linear-gradient(90deg, #ff79da 9%, #9356dc 71%);
+  color: white;
+  font-size: 20px; }
+
+.Ac-etape {
+  height: 7vh;
+  width: 85%;
+  border: 1px solid;
+  border-radius: 30px;
+  margin-bottom: 3vh;
+  margin-left: 5%;
+  position: relative; }
+
+.Ac-etape:nth-child(1)::before {
+  content: "0";
+  position: absolute;
+  left: -25px;
+  top: 25%;
+  height: 50px;
+  width: 50px;
+  background-color: #9356DC;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.Ac-etape:nth-child(2)::before {
+  content: "1";
+  position: absolute;
+  left: -25px;
+  top: 25%;
+  height: 50px;
+  width: 50px;
+  background-color: #9356DC;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.Ac-etape:nth-child(3)::before {
+  content: "2";
+  position: absolute;
+  left: -25px;
+  top: 25%;
+  height: 50px;
+  width: 50px;
+  background-color: #9356DC;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.Ac-etape:nth-child(4)::before {
+  content: "3";
+  position: absolute;
+  left: -25px;
+  top: 25%;
+  height: 50px;
+  width: 50px;
+  background-color: #9356DC;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.Ac-carte {
+  border: solid 1px;
+  border-radius: 10px;
+  margin-bottom: 2vh;
+  height: 25vh;
+  width: 90vw;
+  position: relative;
+  overflow: hidden; }
+
+.image {
+  height: 70%;
+  width: 100%;
+  border: solid 1px; }
+
+.contenu {
+  border: solid 1px;
+  height: 26%;
+  width: 94%;
+  display: flex;
+  justify-content: space-between;
+  padding: 1% 3%; }
+
+#laPalette .image {
+  background-image: url("../../Maquettes Ohmyfood/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 70%;
+  width: 105%; }
+
+#laNote .image {
+  background-image: url("../../Maquettes Ohmyfood/images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 70%;
+  width: 105%; }
+
+#laFrançaise .image {
+  background-image: url("../../Maquettes Ohmyfood/images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 70%;
+  width: 105%; }
+
+#leDélice .image {
+  background-image: url("../../Maquettes Ohmyfood/images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 70%;
+  width: 105%; }
