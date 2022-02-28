@@ -2,7 +2,8 @@
 @import 'placeholder';
 @import 'mixins';
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;500&family=Roboto&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;500&family=Roboto&family=Shrikhand&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css');
 
 body {
     margin: 0;
@@ -30,6 +31,7 @@ ul li{
     flex-direction: column; }
   
   header {
+    position: relative;
     margin-top: 0px;
     display: flex;
     justify-content: center;
@@ -37,21 +39,32 @@ ul li{
     width: 100vw;
     height: 70px;
   // border-bottom: solid 1px;
-background-color: white;
-box-shadow: 0px 1px 20px rgb(152, 155, 155) ;
-// position: fixed;
-z-index: 10;
+    background-color: white;
+    box-shadow: 0px 1px 20px rgb(152, 155, 155) ;
+    // position: fixed;
+    z-index: 10;
+ }
+ header a{
+   margin-left: 20px;
+   position: absolute;
+   align-items: center;
+   left: 2%
  }
  header svg{
    width:180px;
    height:100px;
  }
+ 
  .Ac-localisation em{
-   font-size: 20px;
+   font-size: 18px;
+   width: 190px;
+  //  background-color: red;
  }
   
   .Ac-localisation {
     display: flex;
+    
+    
     justify-content: center;
     align-items: center;
     width: 100vw;
@@ -63,6 +76,7 @@ z-index: 10;
    .Ac-localisation svg{
      width: 20px;
      height: 20px;
+     margin-right: 10px;
    }
 
    .Ac-presentation h1, .Ac-presentation p{
@@ -83,14 +97,21 @@ z-index: 10;
     flex-direction: column;
      }
     h1, h2{
-      font-size: 30px;
-      font-weight: 800;}
+      font-size: 25px;
+      font-weight: 800;
+      }
   .Ac-fonctionnement {
     width: 100vw; 
     height: auto;
     background-color: white;
     margin-bottom: 10vh;
     padding-left: 7%;
+   }
+   .Ac-etape .n-style{
+     fill: grey;
+   }
+   .Ac-fonctionnement .Ac-etape:nth-child(4) .n-style{
+     fill: $primaire;
    }
    button{
     height: 60px;
@@ -99,15 +120,17 @@ z-index: 10;
     border-radius: 30px;
     border: none;
     background: rgb(255,121,218);
-    background: linear-gradient(90deg, rgba(255,121,218,1) 9%, rgba(147,86,220,1) 71%);
+    background: linear-gradient(177deg, rgba(255,121,218,1) 9%, rgba(147,86,220,1) 71%);  
     color: white;
-    font-size: 20px;
+    font-size: 19px;
+    box-shadow:  -1px 13px 31px -10px rgb(152, 155, 155);
+    cursor: pointer;
   }
  .Ac-etape {
     height: 80px;
     width: 85%;
     // border: 1px solid;
-    border-radius: 30px;
+    border-radius: 25px;
     margin-bottom: 3vh;
     margin-left: 5%;
     position: relative; 
@@ -117,6 +140,7 @@ z-index: 10;
     justify-content: space-evenly;
     // text-align: ;
 
+
   
  }
 
@@ -125,10 +149,11 @@ z-index: 10;
     .Ac-etape:nth-child(#{$i})::before {
     content: "#{($i - 1)}";
     position: absolute;
-    left: -25px;
-    top: 25%;
-    height: 50px;
-    width: 50px;
+    left: -15px;
+    top: 30%;
+    height: 30px;
+    width: 30px;
+    color: white;
     background-color: $primaire;
     border-radius: 50%;
     display: flex;
@@ -145,7 +170,9 @@ z-index: 10;
      width: 90vw;
      position: relative;
      overflow: hidden;
-     box-shadow: 0px 1px 20px rgb(152, 155, 155) 
+     box-shadow: 0px 1px 20px rgb(152, 155, 155);
+     background-color: white;
+     
  }
  .Ac-carte p{
     font-size: 15;
@@ -194,11 +221,15 @@ z-index: 10;
 }
 }
  svg {
-  width: 30px;
+  width: 31px;
   height: 30px;
 }
-.n-style{
-  fill: grey;}
+.Ac-restaurants .n-style{
+  fill: white;
+  stroke: black;
+  stroke-width: 20px;
+  cursor: pointer;
+}
 // .n-style:last-child{
 //  fill: $primaire}
 
@@ -208,8 +239,10 @@ input[type="checkbox"]{
 // .contenu .n-style{
 //   fill: blue;
 // }
+
 input[type="checkbox"]:checked + label svg{
   fill: $primaire;
+  
 } 
 
 footer{
@@ -222,6 +255,10 @@ footer a{
 footer svg{
   width: 9px;
   margin-top: 1%;
+  margin-right: 5px;
+}
+footer ul{
+  padding: 0px 0px 15px 26px;
 }
 footer ul li a:nth-child(1), footer ul li:nth-child(2){
   display: flex;
@@ -229,11 +266,18 @@ footer ul li a:nth-child(1), footer ul li:nth-child(2){
   position: relative;
   height: 20px;
 }
-footer>svg:nth-child(2){
+
+footer ul li:nth-child(3) svg{
   transform: rotate(-45deg);
 }
-footer svg .n-style{
-  fill: white
+
+footer .n-style{
+  fill: white;
+}
+footer .logo{
+  font-family: 'Shrikhand', cursive;
+  color: white;
+  margin: 15px 0px;
 }
 //---------------------------------------------------------------------------------------
 // page restaurant
@@ -264,6 +308,11 @@ footer svg .n-style{
   }
   .R-carte h2{
     font-size: 25px;
+    text-transform: uppercase;
+  }
+  .R-carte h1{
+    font-family: 'Shrikhand', cursive;
+    font-size: 30px;
   }
   .R-titre{
     // CHANGEMENT font
@@ -271,17 +320,25 @@ footer svg .n-style{
     justify-content: space-between;
     width: 80%;
     margin: 20px auto;
+    align-items: center;
+  }
+  .R-titre  .n-style{
+     fill: rgb(233, 233, 233);
+     stroke: black;
+     stroke-width: 20px;
+     cursor: pointer;
   }
   h2{
     padding: 0 5%;
   }
-  h2::after{
+ 
+  .R-carte h2::after{
     display: block;
-    background-color: $secondaire;
+    background-color: $couleurnotif;
     content: "";
     margin-top: 1%;
     width: 50px;
-    height: 2px;
+    height: 4+px;
   }
   .R-entree, .R-plats, .R-dessert{
     width: 90%;
@@ -295,19 +352,28 @@ footer svg .n-style{
   }
   .plat{
     width: 100%;
-    height: 80px;
+    height: auto;
     // border: 1px solid;
     border-radius: 20px;
     margin-bottom: 20px;
     background-color: white;
     box-shadow:  -1px 13px 31px -10px rgb(152, 155, 155);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
   }
 .prix{
   margin-top: 8%; 
+  position: absolute;
+  right: 22%;
+  
 }
 .plat .contenu{
   margin: 0 auto;
   height: 100%;
+  transform: translate(0%, 10%);
+  // overflow: hidden;
+
 }
 
 .plat em{
@@ -318,3 +384,62 @@ footer svg .n-style{
   left: 50%;
   transform: translate(-50%, -50%);
 }
+.prix::after{
+  display: inline-block;
+  content: "\f153";
+  font-weight: 900;
+  font-family: "Font Awesome 6 Free";
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+}
+
+$times: R-entree, R-plats, R-dessert;
+
+@each $time in $times{
+  @for $i from 1 through 4{
+.#{$time} .plat:nth-child(#{$i}){
+  animation: apparition #{('0.'+(5 + $i)+'s')} linear;
+}
+}
+}
+@keyframes apparition{
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  
+  75% {
+    opacity: 0.5;
+  }
+  to{
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+
+.contenu input [type='checkbox'] :checked{
+  animation: validation 3s linear;
+  
+}
+
+.val{
+  width: 20%;
+  height: 100%;
+  background-color: green;
+  position: absolute;
+  right: -2%;
+  top: -10%;
+}
+
+@keyframes validation{
+  from{
+    right: -22%;
+  }
+  to{
+    right: -2%;
+  }
+}
+
