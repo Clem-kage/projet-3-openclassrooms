@@ -218,7 +218,10 @@ em {
   height: 80%; }
 
 .text p {
-  margin-top: 3%; }
+  margin-top: 3%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap; }
 
 #laPalette .image {
   background-image: url("../../Maquettes Ohmyfood/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg");
@@ -378,7 +381,7 @@ h2 {
 
 .R-carte h2::after {
   display: block;
-  background-color: #279671;
+  background-color: #69e2be;
   content: "";
   margin-top: 1%;
   width: 50px;
@@ -394,7 +397,7 @@ h2 {
 
 .plat {
   width: 100%;
-  height: auto;
+  height: 100px;
   border-radius: 20px;
   margin-bottom: 20px;
   background-color: white;
@@ -404,22 +407,33 @@ h2 {
   overflow: hidden; }
 
 .prix {
-  position: absolute;
   margin-right: 0%;
-  right: 5%;
-  top: 60%;
-  border: solid 1px;
-  z-index: 50;
-  transition: .8s; }
+  right: 2%;
+  top: 0%;
+  padding: 10% 2%;
+  transition: .8s;
+  background-color: white;
+  height: 100%;
+  width: 10%;
+  display: flex;
+  align-items: center;
+  margin-top: 7%; }
 
 .plat .contenu {
   margin: 0 auto;
   height: 100%;
   align-self: center;
-  flex-wrap: wrap; }
+  flex-wrap: wrap;
+  text-overflow: ellipsis;
+  flex-wrap: nowrap;
+  display: flex; }
 
 .plat em {
-  font-size: 23px; }
+  font-size: 23px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  flex-wrap: nowrap;
+  overflow: hidden; }
 
 .R-carte button {
   position: absolute;
@@ -437,52 +451,40 @@ h2 {
   -webkit-font-smoothing: antialiased; }
 
 .R-entree .plat:nth-child(1) {
-  animation: apparition 0.6s linear;
-  animation-delay: 0.6s; }
+  animation: apparition 0.6s linear; }
 
 .R-entree .plat:nth-child(2) {
-  animation: apparition 0.7s linear;
-  animation-delay: 0.7s; }
+  animation: apparition 0.7s linear; }
 
 .R-entree .plat:nth-child(3) {
-  animation: apparition 0.8s linear;
-  animation-delay: 0.8s; }
+  animation: apparition 0.8s linear; }
 
 .R-entree .plat:nth-child(4) {
-  animation: apparition 0.9s linear;
-  animation-delay: 0.9s; }
+  animation: apparition 0.9s linear; }
 
 .R-plats .plat:nth-child(1) {
-  animation: apparition 0.6s linear;
-  animation-delay: 0.6s; }
+  animation: apparition 0.6s linear; }
 
 .R-plats .plat:nth-child(2) {
-  animation: apparition 0.7s linear;
-  animation-delay: 0.7s; }
+  animation: apparition 0.7s linear; }
 
 .R-plats .plat:nth-child(3) {
-  animation: apparition 0.8s linear;
-  animation-delay: 0.8s; }
+  animation: apparition 0.8s linear; }
 
 .R-plats .plat:nth-child(4) {
-  animation: apparition 0.9s linear;
-  animation-delay: 0.9s; }
+  animation: apparition 0.9s linear; }
 
 .R-dessert .plat:nth-child(1) {
-  animation: apparition 0.6s linear;
-  animation-delay: 0.6s; }
+  animation: apparition 0.6s linear; }
 
 .R-dessert .plat:nth-child(2) {
-  animation: apparition 0.7s linear;
-  animation-delay: 0.7s; }
+  animation: apparition 0.7s linear; }
 
 .R-dessert .plat:nth-child(3) {
-  animation: apparition 0.8s linear;
-  animation-delay: 0.8s; }
+  animation: apparition 0.8s linear; }
 
 .R-dessert .plat:nth-child(4) {
-  animation: apparition 0.9s linear;
-  animation-delay: 0.9s; }
+  animation: apparition 0.9s linear; }
 
 @keyframes apparition {
   from {
@@ -495,7 +497,12 @@ h2 {
     transform: translateY(0px); } }
 
 .plat .text {
-  transform: translateY(10%); }
+  transform: translateY(10%);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; }
 
 .plat input[type='checkbox']:checked + label .cub {
   animation: validation 1.5s ease-in-out; }
@@ -507,13 +514,13 @@ h2 {
   transform: rotate(0deg); }
 
 .contenu:hover > .prix {
-  right: 25%; }
+  margin-right: 18%; }
 
 .cub {
   width: 20%;
   height: 500px;
   position: absolute;
-  background-color: red;
+  background-color: #69e2be;
   right: -23%;
   display: flex;
   justify-content: center;
