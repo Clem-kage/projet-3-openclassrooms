@@ -2,6 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;500&family=Roboto&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;500&family=Roboto&family=Shrikhand&display=swap");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/1.0.0/css/all.min.css");
 body {
   margin: 0;
   padding: 0;
@@ -59,9 +60,8 @@ header svg {
   height: 4vh;
   background-color: #c8cccc; }
 
-.Ac-localisation svg {
-  width: 20px;
-  height: 20px;
+.Ac-localisation i {
+  font-size: 20px;
   margin-right: 10px; }
 
 .Ac-presentation h1, .Ac-presentation p {
@@ -90,11 +90,12 @@ h1, h2 {
   margin-bottom: 10vh;
   padding-left: 7%; }
 
-.Ac-etape .n-style {
-  fill: grey; }
+.Ac-etape i {
+  color: grey;
+  font-size: 25px; }
 
-.Ac-fonctionnement .Ac-etape:nth-child(4) .n-style {
-  fill: #9356DC; }
+.Ac-fonctionnement .Ac-etape:nth-child(4) i {
+  color: #9356DC; }
 
 button {
   height: 60px;
@@ -108,6 +109,12 @@ button {
   font-size: 19px;
   box-shadow: -1px 13px 31px -10px #989b9b;
   cursor: pointer; }
+
+button:hover, .R-carte button:hover {
+  transition: .2s;
+  background: #f9a4e2;
+  background: linear-gradient(177deg, #f9a4e2 9%, #aa82da 71%);
+  box-shadow: -1px 29px 41px -10px #989b9b; }
 
 .Ac-etape {
   height: 80px;
@@ -254,7 +261,8 @@ svg {
 input[type="checkbox"] {
   display: none; }
 
-input[type="checkbox"]:checked + label svg {
+input[type="checkbox"]:hover + label svg {
+  transition: .5s;
   fill: #9356DC; }
 
 footer {
@@ -288,6 +296,40 @@ footer .logo {
   font-family: 'Shrikhand', cursive;
   color: white;
   margin: 15px 0px; }
+
+.R-titre i {
+  color: black;
+  font-size: 30px;
+  padding: 0 0 0;
+  transition: .5s;
+  cursor: pointer;
+  font-weight: 300;
+  font-family: "Font Awesome 6 Free";
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  transition: 1s; }
+
+.R-titre i:hover, .contenu i:hover {
+  color: #9356DC;
+  font-weight: 900; }
+
+.contenu i {
+  color: black;
+  font-size: 30px;
+  padding: 0 0 0;
+  transition: 1s ease;
+  cursor: pointer;
+  font-weight: 300;
+  font-family: "Font Awesome 6 Free";
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased; }
+
+.R-titre i:hover, .contenu i:hover {
+  color: #9356DC; }
 
 .R-image {
   width: 100%;
@@ -367,7 +409,8 @@ h2 {
   right: 5%;
   top: 60%;
   border: solid 1px;
-  z-index: 50; }
+  z-index: 50;
+  transition: .8s; }
 
 .plat .contenu {
   margin: 0 auto;
@@ -394,46 +437,58 @@ h2 {
   -webkit-font-smoothing: antialiased; }
 
 .R-entree .plat:nth-child(1) {
-  animation: apparition 0.6s linear; }
+  animation: apparition 0.6s linear;
+  animation-delay: 0.6s; }
 
 .R-entree .plat:nth-child(2) {
-  animation: apparition 0.7s linear; }
+  animation: apparition 0.7s linear;
+  animation-delay: 0.7s; }
 
 .R-entree .plat:nth-child(3) {
-  animation: apparition 0.8s linear; }
+  animation: apparition 0.8s linear;
+  animation-delay: 0.8s; }
 
 .R-entree .plat:nth-child(4) {
-  animation: apparition 0.9s linear; }
+  animation: apparition 0.9s linear;
+  animation-delay: 0.9s; }
 
 .R-plats .plat:nth-child(1) {
-  animation: apparition 0.6s linear; }
+  animation: apparition 0.6s linear;
+  animation-delay: 0.6s; }
 
 .R-plats .plat:nth-child(2) {
-  animation: apparition 0.7s linear; }
+  animation: apparition 0.7s linear;
+  animation-delay: 0.7s; }
 
 .R-plats .plat:nth-child(3) {
-  animation: apparition 0.8s linear; }
+  animation: apparition 0.8s linear;
+  animation-delay: 0.8s; }
 
 .R-plats .plat:nth-child(4) {
-  animation: apparition 0.9s linear; }
+  animation: apparition 0.9s linear;
+  animation-delay: 0.9s; }
 
 .R-dessert .plat:nth-child(1) {
-  animation: apparition 0.6s linear; }
+  animation: apparition 0.6s linear;
+  animation-delay: 0.6s; }
 
 .R-dessert .plat:nth-child(2) {
-  animation: apparition 0.7s linear; }
+  animation: apparition 0.7s linear;
+  animation-delay: 0.7s; }
 
 .R-dessert .plat:nth-child(3) {
-  animation: apparition 0.8s linear; }
+  animation: apparition 0.8s linear;
+  animation-delay: 0.8s; }
 
 .R-dessert .plat:nth-child(4) {
-  animation: apparition 0.9s linear; }
+  animation: apparition 0.9s linear;
+  animation-delay: 0.9s; }
 
 @keyframes apparition {
   from {
     opacity: 0;
     transform: translateY(20px); }
-  75% {
+  95% {
     opacity: 0.5; }
   to {
     opacity: 1;
@@ -445,28 +500,89 @@ h2 {
 .plat input[type='checkbox']:checked + label .cub {
   animation: validation 1.5s ease-in-out; }
 
-.plat input[type='checkbox']:checked + label .prix {
-  animation: prix 1.5s ease-in-out; }
+.contenu:hover > .cub {
+  right: -1%; }
+
+.contenu:hover > .cub::after {
+  transform: rotate(0deg); }
+
+.contenu:hover > .prix {
+  right: 25%; }
 
 .cub {
   width: 20%;
-  height: 80px;
+  height: 500px;
   position: absolute;
   background-color: red;
-  right: -23%; }
+  right: -23%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: .6s; }
 
-@keyframes validation {
-  from {
-    right: -23%; }
-  50% {
-    right: -5%; }
-  to {
-    right: -23%; } }
+.cub::after {
+  content: "\f058";
+  font-weight: 900;
+  font-size: 25px;
+  color: white;
+  font-family: "Font Awesome 6 Free";
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  transform: rotate(-180deg);
+  transition: .8s ease-out; }
 
-@keyframes prix {
+#accueil {
+  animation: attend ease 3.5s; }
+
+@keyframes attend {
   from {
-    right: 5%; }
-  50% {
-    right: 22%; }
+    opacity: 0; }
+  90% {
+    opacity: 0; }
   to {
-    right: 5%; } }
+    opacity: 1; } }
+
+.loader {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  animation: deseppear;
+  animation: chargement 3s ease-out;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: 10px solid #9356DC;
+  opacity: 0; }
+
+@keyframes chargement {
+  from {
+    opacity: 1;
+    width: 110px;
+    height: 110px;
+    border: 10px solid #9356DC; }
+  20% {
+    border: 20px solid #FF79DA;
+    width: 150px;
+    height: 150px; }
+  50% {
+    border: 10px solid #99E2D0;
+    width: 10px;
+    height: 10px; }
+  80% {
+    opacity: 0.5;
+    width: 200px;
+    height: 200px;
+    border: 30px solid #9356DC; }
+  90% {
+    opacity: 0.3;
+    width: 120px;
+    height: 120px;
+    border: 10px solid #FF79DA; }
+  to {
+    opacity: 0.1;
+    width: 100px;
+    height: 100px;
+    border: 30px solid #FF79DA; } }

@@ -4,6 +4,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;500&family=Roboto&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;500&family=Roboto&family=Shrikhand&display=swap');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/1.0.0/css/all.min.css');
 // hover
 body {
     margin: 0;
@@ -73,9 +74,8 @@ ul li{
     background-color: rgb(200, 204, 204);
     // box-shadow: 121px 112px 22px  rgb(240, 8, 8) ;
    }
-   .Ac-localisation svg{
-     width: 20px;
-     height: 20px;
+   .Ac-localisation i{
+     font-size: 20px;
      margin-right: 10px;
    }
 
@@ -107,12 +107,14 @@ ul li{
     margin-bottom: 10vh;
     padding-left: 7%;
    }
-   .Ac-etape .n-style{
-     fill: grey;
+   .Ac-etape i{
+     color: grey;
+     font-size: 25px;
    }
-   .Ac-fonctionnement .Ac-etape:nth-child(4) .n-style{
-     fill: $primaire;
+   .Ac-fonctionnement .Ac-etape:nth-child(4) i{
+     color: $primaire;
    }
+
    button{
     height: 60px;
     align-content: center;
@@ -125,6 +127,12 @@ ul li{
     font-size: 19px;
     box-shadow:  -1px 13px 31px -10px rgb(152, 155, 155);
     cursor: pointer;
+  }
+  button:hover, .R-carte button:hover{
+    transition: .2s;
+    background: rgb(249,164,226);
+    background: linear-gradient(177deg, rgba(249,164,226,1) 9%, rgba(170,130,218,1) 71%);;  
+    box-shadow:  -1px 29px 41px -10px rgb(152, 155, 155);
   }
  .Ac-etape {
     height: 80px;
@@ -234,7 +242,8 @@ input[type="checkbox"]{
 //   fill: blue;
 // }
 
-input[type="checkbox"]:checked + label svg{
+input[type="checkbox"]:hover + label svg{
+  transition: .5s;
   fill: $primaire;
   
 } 
@@ -272,6 +281,44 @@ footer .logo{
   font-family: 'Shrikhand', cursive;
   color: white;
   margin: 15px 0px;
+}
+.R-titre i{
+  color: black;
+  font-size: 30px;
+  // border: 1px solid;
+  padding: 0 0 0;
+  transition: .5s;
+  cursor: pointer;
+  font-weight: 300;
+  font-family: "Font Awesome 6 Free";
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  transition: 1s;
+}
+.R-titre i:hover, .contenu i:hover{
+  color: $primaire;
+  font-weight: 900;
+}
+.contenu i{
+  color: black;;
+  font-size: 30px;
+  // border: 1px solid;
+  padding: 0 0 0;
+  transition: 1s ease;
+  cursor: pointer;
+  font-weight: 300;
+  font-family: "Font Awesome 6 Free";
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+}
+
+.R-titre i:hover, .contenu i:hover{
+  color: $primaire;
+  // font-size: 35px;
 }
 //---------------------------------------------------------------------------------------
 // page restaurant
@@ -355,6 +402,7 @@ footer .logo{
     cursor: pointer;
     position: relative;
     overflow: hidden;
+   
   }
 .prix{
   // margin-top: 8%; 
@@ -368,7 +416,7 @@ footer .logo{
   // width: auto;
   border: solid 1px;
   z-index: 50;
-  
+  transition: .8s;
 
 }
 .plat .contenu{
@@ -390,6 +438,8 @@ footer .logo{
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+
 .prix::after{
   display: inline;
   content: "\f153";
@@ -406,7 +456,9 @@ $times: R-entree, R-plats, R-dessert;
 @each $time in $times{
   @for $i from 1 through 4{
 .#{$time} .plat:nth-child(#{$i}){
+  // @include enchainement;
   animation: apparition #{('0.'+(5 + $i)+'s')} linear;
+  animation-delay: #{('0.'+(5 + $i)+'s')};
 }
 }
 }
@@ -416,7 +468,7 @@ $times: R-entree, R-plats, R-dessert;
     transform: translateY(20px);
   }
   
-  75% {
+  95% {
     opacity: 0.5;
   }
   to{
@@ -436,59 +488,173 @@ $times: R-entree, R-plats, R-dessert;
   // margin-right: -20%;
 
 }
-.plat input[type='checkbox']:checked + label .prix{
 
-  animation: prix 1.5s ease-in-out;
+// .plat input[type='checkbox']:checked + label .prix{
+
+//   animation: prix 1.5s ease-in-out;
+// }
+.contenu:hover > .cub {
+  right: -1%;
 }
+.contenu:hover > .cub::after {
+  // animation: rota .5s ease-in;
+  transform: rotate(0deg);
+}
+
+
+.contenu:hover > .prix{
+  right: 25%;
+}
+
 
 .cub{
   width: 20%;
-  height: 80px; 
+  height: 500px; 
   position: absolute;
   background-color: red;
   right: -23%;
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: .6s;
   // margin-right: -20%;
   
   // animation: prix 1.5s ease-in-out;
 
 }
+.cub::after{
+  content:"\f058";
+  font-weight: 900;
+  font-size: 25px;
+  color: white;
+  font-family: "Font Awesome 6 Free";
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  transform: rotate(-180deg);
+  transition: .8s ease-out;
+  // margin-left: 10%;
 
-
-@keyframes validation{
-  from{
-   right: -23%;
-  }
-  50%{
-    right: -5%;
-  }
-  to{
-    right: -23%;
-  }
-}
-@keyframes prix{
-  from{
-    right: 5%;
-  }
-  50%{
-    right: 22%;
-  }
-  to{
-    right: 5%;
-   
-  }
 }
 
-
-// main{
-//   animation: attend linear 5s;
+// @keyframes rota{
+// from{
+//   transform: rotate(180deg);
+// }
+// 50%{
+//   transform: rotate(50deg);
+// }
+// 70%{
+//   color: green;
+// }
+// to{
+//   transform: rotate(0deg);
+//   color: green;
+// }
 // }
 
-// @keyframes attend{
-//    from{
-//       opacity: 0;
-//    }
-//    to{
-//      opacity: 1;
-//    }
-//  }
+
+// @keyframes validation{
+//   from{
+//    right: -23%;
+//   }
+//   50%{
+//     right: -1%;
+//   }
+//   to{
+//     right: -23%;
+//   }
+// }
+// @keyframes prix{
+//   from{
+//     right: 5%;
+//   }
+//   50%{
+//     right: 22%;
+//   }
+//   to{
+//     right: 5%;
+   
+//   }
+// }
+
+
+#accueil{
+  animation: attend ease 3.5s;
+}
+// @mixin enchainement{
+//   @if  opacity != 1{
+//     .R-entree .plat, .R-plats
+//      .plat, .R-dessert .plat{
+//       animation-play-state: paused;
+//     }
+//   }
+// }
+
+@keyframes attend{
+   from{
+      opacity: 0;
+   }
+   90%{
+      opacity: 0;
+   }
+   to{
+     opacity: 1;
+   }
+ }
+ .loader{
+  width: 100px;
+  height: 100px;
+  //  background-color: white;
+   position: absolute;
+   animation: deseppear ;
+   animation: chargement 3s ease-out;
+   top: 10%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   border-radius: 50%;
+   border: 10px solid $primaire;
+   opacity: 0;
+   
+   
+ }
+ 
+ @keyframes chargement{
+   from{
+       opacity: 1;
+       width: 110px;
+       height: 110px;
+       border: 10px solid $primaire;
+   }
+   20%{
+       border: 20px solid $secondaire;
+       width: 150px;
+       height: 150px;
+   }
+   50%{
+       border: 10px solid $tertiaire;
+       width: 10px;
+       height: 10px;
+   }
+   80%{
+
+       opacity: 0.5;
+       width: 200px;
+       height: 200px;
+       border: 30px solid $primaire;
+   }
+   90%{
+
+    opacity: 0.3;
+    width: 120px;
+    height: 120px;
+    border: 10px solid $secondaire;
+}
+   to{
+       opacity: 0.1;
+       width: 100px;
+       height: 100px;
+       border: 30px solid $secondaire;
+   }
+ }
