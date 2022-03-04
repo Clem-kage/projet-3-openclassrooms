@@ -1,6 +1,6 @@
-@import 'variable';
-@import 'placeholder';
-@import 'mixins';
+@import '_variable';
+@import '_placeholder';
+@import '_mixins';
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;500&family=Roboto&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;500&family=Roboto&family=Shrikhand&display=swap');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css');
@@ -11,7 +11,6 @@ body {
     padding: 0; 
   font-family: $fontfamtext;
 background-color: $couleurbody;
-//  font-size: 20px;
 }
 a{
   color: inherit;
@@ -39,10 +38,8 @@ ul li{
     align-items: center;
     width: 100vw;
     height: 70px;
-  // border-bottom: solid 1px;
     background-color: white;
     box-shadow: 0px 1px 20px rgb(152, 155, 155) ;
-    // position: fixed;
     z-index: 10;
  }
  header a{
@@ -59,20 +56,15 @@ ul li{
  .Ac-localisation em{
    font-size: 18px;
    width: 190px;
-  //  background-color: red;
  }
   
   .Ac-localisation {
     display: flex;
-    
-    
     justify-content: center;
     align-items: center;
     width: 100vw;
     height: 4vh;
-    // border-bottom: solid 1px;
     background-color: rgb(200, 204, 204);
-    // box-shadow: 121px 112px 22px  rgb(240, 8, 8) ;
    }
    .Ac-localisation i{
      font-size: 20px;
@@ -93,7 +85,6 @@ ul li{
     align-items: center;
     width: 100vw;
     height: 30vh;
-    // border-bottom: solid 1px;
     flex-direction: column;
      }
     h1, h2{
@@ -137,16 +128,15 @@ ul li{
  .Ac-etape {
     height: 80px;
     width: 85%;
-    // border: 1px solid;
     border-radius: 25px;
     margin-bottom: 3vh;
     margin-left: 5%;
     position: relative; 
-    box-shadow:  -1px 13px 31px -10px rgb(152, 155, 155);
+    box-shadow: -1px 6px 25px -9px  rgb(152, 155, 155);
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    // text-align: ;  
+    background-color: $couleurbody;
  }
 
  @for $i from 1 through 4{
@@ -168,7 +158,6 @@ ul li{
 }
 
  .Ac-carte{
-    //  border: solid 1px;
      border-radius: 10px;
      margin-bottom: 2vh;
      height: 25vh;
@@ -187,7 +176,21 @@ ul li{
  .image{
      height: 70%;
      width: 100%;
+  
+         .new{
+           position:  absolute;
+           padding: 2% 4%;
+           height: 22px;
+           background-color:  $couleurnotif;
+           color: rgb(80, 168, 120);
+           right: 4%;
+           top: 4%;
+           border-radius: 2px;
+         }
  }
+
+ 
+
  .contenu{
     height: 15%;
     width: 95%;
@@ -197,9 +200,7 @@ ul li{
     align-items: center;
     margin: 4% auto;
     position: relative;
-    // text-overflow: ellipsis;
-    // overflow: hidden;
-    // white-space: nowrap;
+
 
  }
  .text{
@@ -214,11 +215,8 @@ ul li{
    white-space: nowrap;
  }
 
-// .image{
-//   background-image: url("../../Maquettes Ohmyfood/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg");
-// }
-@each $image in $images{
 
+@each $image in $images{
 
 ##{nth($image, 1)} .image{
   background-image: (#{nth($image, 2)});
@@ -226,7 +224,6 @@ ul li{
   background-position: center;
   height: 70%;
   width: 105%;
-  // transform: scale(1.2);
 }
 }
  svg {
@@ -239,25 +236,14 @@ ul li{
   stroke-width: 20px;
   cursor: pointer;
 }
-// .n-style:last-child{
-//  fill: $primaire}
-
 input[type="checkbox"]{
    display: none;
 }
-// .contenu .n-style{
-//   fill: blue;
-// }
 
-input[type="checkbox"]:hover + label svg{
-  transition: .5s;
-  fill: $primaire;
-  
-} 
 
 footer{
   background-color: black;
-  width: 100%
+  width: 100%;
 }
 footer a{
   color: white;
@@ -276,11 +262,9 @@ footer ul li a:nth-child(1), footer ul li:nth-child(2){
   position: relative;
   height: 20px;
 }
-
 footer ul li:nth-child(3) svg{
   transform: rotate(-45deg);
 }
-
 footer .n-style{
   fill: white;
 }
@@ -292,7 +276,6 @@ footer .logo{
 .R-titre i{
   color: black;
   font-size: 30px;
-  // border: 1px solid;
   padding: 0 0 0;
   transition: .5s;
   cursor: pointer;
@@ -311,7 +294,6 @@ footer .logo{
 .contenu i{
   color: black;;
   font-size: 30px;
-  // border: 1px solid;
   padding: 0 0 0;
   transition: 1s ease;
   cursor: pointer;
@@ -325,11 +307,10 @@ footer .logo{
 
 .R-titre i:hover, .contenu i:hover{
   color: $primaire;
-  // font-size: 35px;
 }
+
 //---------------------------------------------------------------------------------------
 // page restaurant
-
 
 .R-image{
   width: 100%;
@@ -382,7 +363,7 @@ footer .logo{
  
   .R-carte h2::after{
     display: block;
-    background-color: rgb(105, 226, 190);
+    background-color: $couleurnotif;
     content: "";
     margin-top: 1%;
     width: 50px;
@@ -400,7 +381,7 @@ footer .logo{
   }
   .plat{
     width: 100%;
-    height: 100px;
+    height: auto;
     // border: 1px solid;
     border-radius: 20px;
     margin-bottom: 20px;
@@ -436,7 +417,7 @@ footer .logo{
 }
 .plat .contenu{
   margin: 0 auto;
-  height: 100%;
+  height: auto;
   align-self: center;
   // transform: translate(0%, 10%);
   // overflow: hidden;
@@ -444,6 +425,7 @@ footer .logo{
   text-overflow: ellipsis;
   flex-wrap: nowrap;
   display: flex;
+  align-items: center;
   
 }
 
@@ -460,6 +442,7 @@ footer .logo{
   position: absolute;
   left: 50%;
   transform: translate(-50%, -50%);
+ 
 }
 
 
@@ -543,7 +526,7 @@ $times: R-entree, R-plats, R-dessert;
   width: 20%;
   height: 500px; 
   position: absolute;
-  background-color: rgb(105, 226, 190);
+  background-color: $couleurnotif;
   right: -23%;
   display: flex;
   justify-content: center;
@@ -689,4 +672,39 @@ $times: R-entree, R-plats, R-dessert;
        height: 100px;
        border: 30px solid $secondaire;
    }
+ }
+ @media (min-width:767px){
+  
+   .Ac-etape{
+     max-width: 50%;
+     height: 110px;
+     transform: translate(50%)
+   }
+  //  .Ac-restaurants{
+  //    display: flex;
+  //    flex-wrap: wrap;
+  //    max-width: 1000px
+  //  }
+   .Ac-carte{
+     width: 400px;
+     margin-left: 10%;
+     height: 400px;
+   }
+   .disposition-desktop, .R-carte .disposition-desktop{
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1300px;
+    justify-content: center;
+   }
+   .R-entree, .R-plats, .R-dessert{
+     width: 350px;
+   }
+   .R-carte button{
+      top: 90%;
+   }
+  
+   
+ 
+
+
  }
