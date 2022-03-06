@@ -1,5 +1,5 @@
 @import '_variable';
-@import '_placeholder';
+@import '_animation';
 @import '_mixins';
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;500&family=Roboto&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;500&family=Roboto&family=Shrikhand&display=swap');
@@ -9,8 +9,8 @@
 body {
     margin: 0;
     padding: 0; 
-  font-family: $fontfamtext;
-background-color: $couleurbody;
+    font-family: $fontfamtext;
+    background-color: $couleurbody;
 }
 a{
   color: inherit;
@@ -19,24 +19,19 @@ a{
 ul li{
   list-style: none;
 }
-
   em{
     font-family: $fontfamtext;
     font-style: normal;
   }
   main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flex-center;
     flex-direction: column;
-  overflow: hidden; }
-  
+    overflow: hidden;
+   }
   header {
     position: relative;
     margin-top: 0px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flex-center;
     width: 100vw;
     height: 70px;
     background-color: white;
@@ -53,16 +48,12 @@ ul li{
    width:180px;
    height:100px;
  }
- 
  .Ac-localisation em{
    font-size: 18px;
    width: 190px;
- }
-  
+ } 
   .Ac-localisation {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flex-center;
     width: 100%;
     height: 50px;
     background-color: rgb(200, 204, 204);
@@ -81,9 +72,7 @@ ul li{
    }
   
   .Ac-presentation {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flex-center;
     width: 100%;
     height: 340px;
     flex-direction: column;
@@ -106,15 +95,13 @@ ul li{
    .Ac-fonctionnement .Ac-etape:nth-child(4) i{
      color: $primaire;
    }
-
    button{
     height: 60px;
     align-content: center;
     padding: 0px 19px;
     border-radius: 30px;
     border: none;
-    background: rgb(255,121,218);
-    background: linear-gradient(177deg, rgba(255,121,218,1) 9%, rgba(147,86,220,1) 71%);  
+    @include gradient;
     color: white;
     font-size: 19px;
     box-shadow:  -1px 13px 31px -10px rgb(152, 155, 155);
@@ -152,9 +139,7 @@ ul li{
     color: white;
     background-color: $primaire;
     border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flex-center;
  }
 }
 
@@ -169,7 +154,10 @@ ul li{
      background-color: white;
  }
  .Ac-carte p{
-    font-size: 15;
+    font-size: 18px;
+ }
+ .Ac-carte em{
+    font-size: 20px;
  }
   em{
    font-size: 25px;
@@ -189,9 +177,6 @@ ul li{
            border-radius: 2px;
          }
  }
-
- 
-
  .contenu{
     height: 15%;
     width: 95%;
@@ -201,13 +186,9 @@ ul li{
     align-items: center;
     margin: 4% auto;
     position: relative;
-
-
  }
  .text{
-  
-   height: 80%
-   
+   height: 80%;
  }
  .text p{
    margin-top: 3%;
@@ -215,18 +196,6 @@ ul li{
    overflow: hidden;
    white-space: nowrap;
  }
-
-
-@each $image in $images{
-
-##{nth($image, 1)} .image{
-  background-image: (#{nth($image, 2)});
-  background-size: cover;
-  background-position: center;
-  height: 70%;
-  width: 105%;
-}
-}
  svg {
   width: 31px;
   height: 30px;
@@ -240,8 +209,6 @@ ul li{
 input[type="checkbox"]{
    display: none;
 }
-
-
 footer{
   background-color: black;
   width: 100%;
@@ -287,7 +254,6 @@ footer .logo{
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
   transition: .5s;
-  // animation: 2s heart ease;
 }
 .R-titre i:hover, .contenu i:hover{
   color: $primaire;
@@ -307,20 +273,9 @@ footer .logo{
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
 }
-@keyframes heart{
-  from{
-    opacity: 0
-  }
-
-  to{
-    opacity: 1
-  }
-}
-
-
 
 //---------------------------------------------------------------------------------------
-// page restaurant
+// pages restaurant
 
 .R-image{
   width: 100%;
@@ -350,11 +305,10 @@ footer .logo{
     text-transform: uppercase;
   }
   .R-carte h1{
-    font-family: 'Shrikhand', cursive;
+    font-family: $fam-logo-titre;
     font-size: 30px;
   }
   .R-titre{
-    // CHANGEMENT font
     display: flex;
     justify-content: space-between;
     width: 80%;
@@ -384,7 +338,6 @@ footer .logo{
     display: flex;
     flex-direction: column;
     margin: 0 auto;
-    // border: solid 1px;
     margin-bottom: 50px;
     height: auto;
    
@@ -392,7 +345,6 @@ footer .logo{
   .plat{
     width: 100%;
     height: auto;
-    // border: 1px solid;
     border-radius: 20px;
     margin-bottom: 20px;
     background-color: white;
@@ -404,17 +356,9 @@ footer .logo{
    
   }
 .prix{
-  // margin-top: 8%; 
-  // position: absolute;
   margin-right: 0%;
-  // transform: translateY(50%);
   right: 2%;
-  // width: 20%;
-  // height: 120%;
   top: 0%;
-  // width: auto;
-  // border: solid 1px;
-  // z-index: 50;
   padding: 10% 2%;
   transition: .8s;
   background-color: white; 
@@ -423,39 +367,29 @@ footer .logo{
   display: flex;
   align-items: center;
   margin-top: 7%;
-  // text-align: end;
 }
 .plat .contenu{
   margin: 0 auto;
   height: auto;
   align-self: center;
-  // transform: translate(0%, 10%);
-  // overflow: hidden;
   flex-wrap: wrap;
   text-overflow: ellipsis;
   flex-wrap: nowrap;
   display: flex;
   align-items: center;
-  
 }
-
 .plat em{
   font-size: 23px;
   white-space: nowrap;
   text-overflow: ellipsis;
   flex-wrap: nowrap;
-  
   overflow: hidden;
-
 }
 .R-carte button{
   position: absolute;
   left: 50%;
   transform: translate(-50%, -50%);
- 
 }
-
-
 .prix::after{
   display: inline;
   content: "\f153";
@@ -466,72 +400,26 @@ footer .logo{
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
 }
-
-$times: R-entree, R-plats, R-dessert;
-
-@each $time in $times{
-  @for $i from 1 through 4{
-.#{$time} .plat:nth-child(#{$i}){
-  // @include enchainement;
-  animation: apparition #{('0.'+(5 + $i)+'s')} linear;
-  // animation-delay: #{('0.'+(5 + $i)+'s')};
-}
-}
-}
-@keyframes apparition{
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-    
-  }
- 
-  95% {
-    opacity: 0.5;
-  }
-  to{
-    opacity: 1;
-    transform: translateY(0px);
-    
-  }
-}
 .plat .text{
   transform: translateY(10%);
- 
   text-overflow: ellipsis;
   white-space: nowrap;
   display: flex;
   flex-direction: column;
   overflow: hidden;
 }
-
-
 .plat input[type='checkbox']:checked + label .cub{
-  // animation: validation 5s ease-in-out;
   animation: validation 1.5s ease-in-out;
-  
-  // margin-right: -20%;
-
 }
-
-// .plat input[type='checkbox']:checked + label .prix{
-
-//   animation: prix 1.5s ease-in-out;
-// }
 .contenu:hover > .cub {
   right: -1%;
 }
 .contenu:hover > .cub::after {
-  // animation: rota .5s ease-in;
   transform: rotate(0deg);
 }
-
-
 .contenu:hover > .prix{
   margin-right:18%;
-
 }
-
-
 .cub{
   width: 20%;
   height: 500px; 
@@ -542,10 +430,6 @@ $times: R-entree, R-plats, R-dessert;
   justify-content: center;
   align-items: center;
   transition: .6s;
-  // margin-right: -20%;
-  
-  // animation: prix 1.5s ease-in-out;
-
 }
 .cub::after{
   content:"\f058";
@@ -559,130 +443,25 @@ $times: R-entree, R-plats, R-dessert;
   -webkit-font-smoothing: antialiased;
   transform: rotate(-180deg);
   transition: .8s ease-out;
-  // margin-left: 10%;
-
 }
-
-// @keyframes rota{
-// from{
-//   transform: rotate(180deg);
-// }
-// 50%{
-//   transform: rotate(50deg);
-// }
-// 70%{
-//   color: green;
-// }
-// to{
-//   transform: rotate(0deg);
-//   color: green;
-// }
-// }
-
-
-// @keyframes validation{
-//   from{
-//    right: -23%;
-//   }
-//   50%{
-//     right: -1%;
-//   }
-//   to{
-//     right: -23%;
-//   }
-// }
-// @keyframes prix{
-//   from{
-//     right: 5%;
-//   }
-//   50%{
-//     right: 22%;
-//   }
-//   to{
-//     right: 5%;
-   
-//   }
-// }
-
-
 #accueil{
   animation: attend ease 3.5s;
 }
-// @mixin enchainement{
-//   @if  opacity != 1{
-//     .R-entree .plat, .R-plats
-//      .plat, .R-dessert .plat{
-//       animation-play-state: paused;
-//     }
-//   }
-// }
-
-@keyframes attend{
-   from{
-      opacity: 0;
-   }
-   90%{
-      opacity: 0;
-   }
-   to{
-     opacity: 1;
-   }
- }
  .loader{
-  width: 100px;
-  height: 100px;
-  //  background-color: white;
+   width: 100px;
+   height: 100px;
    position: absolute;
-   animation: deseppear ;
    animation: chargement 3s ease-out;
-   top: 10%;
+   top: 20%;
    left: 50%;
    transform: translate(-50%, -50%);
    border-radius: 50%;
    border: 10px solid $primaire;
    opacity: 0;
-   
-   
  }
+
+ //Responsive---------------------------------------
  
- @keyframes chargement{
-   from{
-       opacity: 1;
-       width: 110px;
-       height: 110px;
-       border: 10px solid $primaire;
-   }
-   20%{
-       border: 20px solid $secondaire;
-       width: 150px;
-       height: 150px;
-   }
-   50%{
-       border: 10px solid $tertiaire;
-       width: 10px;
-       height: 10px;
-   }
-   80%{
-
-       opacity: 0.5;
-       width: 200px;
-       height: 200px;
-       border: 30px solid $primaire;
-   }
-   90%{
-
-    opacity: 0.3;
-    width: 120px;
-    height: 120px;
-    border: 10px solid $secondaire;
-}
-   to{
-       opacity: 0.1;
-       width: 100px;
-       height: 100px;
-       border: 30px solid $secondaire;
-   }
- }
  @media (min-width:767px){
   
    .Ac-etape{
@@ -690,11 +469,6 @@ $times: R-entree, R-plats, R-dessert;
      height: 110px;
      transform: translate(50%)
    }
-  //  .Ac-restaurants{
-  //    display: flex;
-  //    flex-wrap: wrap;
-  //    max-width: 1000px
-  //  }
    .Ac-carte{
      width: 400px;
      margin-left: 10%;
@@ -712,12 +486,10 @@ $times: R-entree, R-plats, R-dessert;
    .R-carte button{
       top: 90%;
    }
-   
   footer ul{
     margin-left: 40%;
   }
-   
- 
-
 
  }
+
+ // annotation: 'Ac-'= balises d'accueil  'R-'= balises de Restaurants  1 css pour l'accueuil et 1 pour les pages de restaurant----------------------------------------------------
