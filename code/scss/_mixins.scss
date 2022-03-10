@@ -4,7 +4,7 @@
     align-items: center;
 }
 @mixin gradient{
-    background: rgb(255,121,218);
+    background: $secondaire;
     background: linear-gradient(177deg, rgba(255,121,218,1) 9%, rgba(147,86,220,1) 71%);  
 }
 

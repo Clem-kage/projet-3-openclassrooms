@@ -70,7 +70,7 @@
   animation: apparition 0.9s linear; }
 
 .R-entree .plat:nth-child(5) {
-  animation: apparition 0.10s linear; }
+  animation: apparition 1s linear; }
 
 .R-plats .plat:nth-child(1) {
   animation: apparition 0.6s linear; }
@@ -85,7 +85,7 @@
   animation: apparition 0.9s linear; }
 
 .R-plats .plat:nth-child(5) {
-  animation: apparition 0.10s linear; }
+  animation: apparition 1s linear; }
 
 .R-dessert .plat:nth-child(1) {
   animation: apparition 0.6s linear; }
@@ -100,7 +100,7 @@
   animation: apparition 0.9s linear; }
 
 .R-dessert .plat:nth-child(5) {
-  animation: apparition 0.10s linear; }
+  animation: apparition 1s linear; }
 
 #laPalette .image {
   background-image: url("../../Maquettes_Ohmyfood/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg");
@@ -231,7 +231,7 @@ button {
   padding: 0px 19px;
   border-radius: 30px;
   border: none;
-  background: #ff79da;
+  background: #FF79DA;
   background: linear-gradient(177deg, #ff79da 9%, #9356dc 71%);
   color: white;
   font-size: 19px;
@@ -405,9 +405,10 @@ footer .n-style {
   fill: white; }
 
 footer .logo {
-  font-family: 'Shrikhand', cursive;
+  font-family: "Shrikhand";
   color: white;
-  margin: 15px 0px; }
+  margin: 15px 0px;
+  font-size: 20px; }
 
 .R-titre i {
   color: black;
