@@ -4,6 +4,9 @@ body {
     font-family: $fontfamtext;
     background-color: $couleurbody;
 }
+header h1{
+  font-family: $fam-logo-titre;
+}
 a{
   color: inherit;
   text-decoration: inherit;
@@ -20,6 +23,7 @@ ul li{
     flex-direction: column;
     overflow: hidden;
    }
+  //  HEADER------------------------------------------------------------------
   header {
     position: relative;
     margin-top: 0px;
@@ -40,6 +44,9 @@ ul li{
    width:180px;
    height:100px;
  }
+//  HEADER--------------------------------------------------------------------------
+
+// PREMIERE PARTIE---------------------------------------------------------------------
  .Ac-localisation em{
    font-size: 18px;
    width: 190px;
@@ -73,6 +80,27 @@ ul li{
       font-size: 25px;
       font-weight: 800;
       }
+      button{
+        height: 60px;
+        align-content: center;
+        padding: 0px 19px;
+        border-radius: 30px;
+        border: none;
+        @include gradient;
+        color: white;
+        font-size: 19px;
+        box-shadow:  -1px 13px 31px -10px rgb(152, 155, 155);
+        cursor: pointer;
+      }
+      button:hover, .R-carte button:hover{
+        transition: .2s;
+        background: rgb(249,164,226);
+        background: linear-gradient(177deg, rgba(249,164,226,1) 9%, rgba(170,130,218,1) 71%);;  
+        box-shadow:  -1px 29px 41px -10px rgb(152, 155, 155);
+      }
+ // FIN PREMIERE PARTIE------------------------------------------------------------------
+ 
+ //SECTION FONCTIONNEMENT----------------------------------------------------------------
   .Ac-fonctionnement {
     width: 100vw; 
     height: auto;
@@ -87,24 +115,7 @@ ul li{
    .Ac-fonctionnement .Ac-etape:nth-child(4) i{
      color: $primaire;
    }
-   button{
-    height: 60px;
-    align-content: center;
-    padding: 0px 19px;
-    border-radius: 30px;
-    border: none;
-    @include gradient;
-    color: white;
-    font-size: 19px;
-    box-shadow:  -1px 13px 31px -10px rgb(152, 155, 155);
-    cursor: pointer;
-  }
-  button:hover, .R-carte button:hover{
-    transition: .2s;
-    background: rgb(249,164,226);
-    background: linear-gradient(177deg, rgba(249,164,226,1) 9%, rgba(170,130,218,1) 71%);;  
-    box-shadow:  -1px 29px 41px -10px rgb(152, 155, 155);
-  }
+   
  .Ac-etape {
     height: 80px;
     width: 85%;
@@ -135,6 +146,11 @@ ul li{
  }
 }
 
+ //FIN SECTION FONCTIONNEMENT----------------------------------------------------------------
+
+
+
+ //SECTION RESTAURANTS----------------------------------------------------------------
  .Ac-carte{
      border-radius: 10px;
      margin-bottom: 2vh;
@@ -201,6 +217,44 @@ ul li{
 input[type="checkbox"]{
    display: none;
 }
+
+.R-titre i{
+  color: black;
+  font-size: 30px;
+  padding: 0 0 0;
+  transition: .5s;
+  cursor: pointer;
+  font-weight: 300;
+  font-family: "Font Awesome 6 Free";
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  transition: .5s;
+}
+.R-titre i:hover, .contenu i:hover{
+  color: $primaire;
+  font-weight: 900;
+  animation: 2s heart ease,  ;
+}
+.contenu i{
+  color: black;;
+  font-size: 30px;
+  padding: 0 0 0;
+  transition: .5s ease;
+  cursor: pointer;
+  font-weight: 300;
+  font-family: "Font Awesome 6 Free";
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+}
+
+ // FIN SECTION RESTAURANTS----------------------------------------------------------------
+
+ //SECTION FOOTER ----------------------------------------------------------------
+
 footer{
   background-color: black;
   width: 100%;
@@ -234,35 +288,4 @@ footer .logo{
   margin: 15px 0px;
   font-size: 20px;
 }
-.R-titre i{
-  color: black;
-  font-size: 30px;
-  padding: 0 0 0;
-  transition: .5s;
-  cursor: pointer;
-  font-weight: 300;
-  font-family: "Font Awesome 6 Free";
-  font-style: normal;
-  font-variant: normal;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  transition: .5s;
-}
-.R-titre i:hover, .contenu i:hover{
-  color: $primaire;
-  font-weight: 900;
-  animation: 2s heart ease,  ;
-}
-.contenu i{
-  color: black;;
-  font-size: 30px;
-  padding: 0 0 0;
-  transition: .5s ease;
-  cursor: pointer;
-  font-weight: 300;
-  font-family: "Font Awesome 6 Free";
-  font-style: normal;
-  font-variant: normal;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-}
+ // FIN SECTION FOOTER ----------------------------------------------------------------

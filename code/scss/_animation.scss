@@ -1,4 +1,4 @@
-
+// animation page de restaurant
 @keyframes apparition{
     from {
       opacity: 0;
@@ -16,7 +16,7 @@
     }
   }
 
-
+//animation loader(body)
   @keyframes attend{
     from{
        opacity: 0;
@@ -29,6 +29,8 @@
     }
   }
 
+
+// animation loader
   @keyframes chargement{
     from{
         opacity: 1;
@@ -67,7 +69,7 @@
         border: 30px solid $secondaire;
     }
   }
-
+// animation coeur
   @keyframes heart{
     from{
       opacity: 0
